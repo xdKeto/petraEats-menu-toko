@@ -67,7 +67,7 @@ a {
   gap: var(--_spacer);
   grid-auto-flow: column;
   grid-auto-columns: 23%;
-
+  scroll-behavior: smooth;
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -107,6 +107,27 @@ a {
   scroll-snap-align: start;
 }
 
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem; /* Adjust the size as needed */
+  cursor: pointer;
+  color: var(--body-color);
+}
+
+.left-arrow {
+  top: 16rem;
+  left: 10px;
+  transform: translate(0%, -50%);
+}
+
+.right-arrow {
+  top: 16rem;
+  right: 10px;
+  transform: translate(0%, -50%);
+}
+
 .rekomen {
   gap: 3rem;
 }
@@ -117,9 +138,37 @@ a {
   color: var(--body-color);
 }
 
+@media(max-width: 1500px){
+  .media-scroller{
+    grid-auto-columns: 30%;
+  }
+}
+
+@media(max-width: 1160px){
+  .media-scroller{
+    grid-auto-columns: 35%;
+  }
+}
+
+@media(max-width: 930px){
+  .media-scroller{
+    grid-auto-columns: 40%;
+  }
+}
+
 @media(max-width: 800px){
   .media-scroller{
     grid-auto-columns: 50%;
+  }
+}
+
+@media(max-width: 700px){
+  .right-arrow{
+    display: none;
+  }
+
+  .left-arrow{
+    display: none;
   }
 }
 
